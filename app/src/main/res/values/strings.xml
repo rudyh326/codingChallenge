@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CodingChallenge</string>
+    <string name="preName">Name</string>
+    <string name="preDate">Created At</string>
+    <string name="preStargazersCount">Stargazers Count</string>
+</resources>

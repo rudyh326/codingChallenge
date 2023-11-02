@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.codingchallenge.screens.detail.DetailViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="16dp">
+
+        <ImageView
+            android:id="@+id/repo_detail_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            app:repoAvatarURL="@{viewModel.selectedProperty.avatarUrl}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/repo_detail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="truth"
+            style="@style/detailText"
+            app:repoDetailName="@{viewModel.selectedProperty.name}"
+            app:layout_constraintStart_toStartOf="@+id/repo_detail_avatar"
+            app:layout_constraintTop_toBottomOf="@+id/repo_detail_avatar" />
+
+        <TextView
+            android:id="@+id/repo_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="2011-06-22T18:55:12Z"
+            style="@style/detailText"
+            app:repoDetailDate="@{viewModel.selectedProperty.createdAt}"
+            app:layout_constraintStart_toStartOf="@+id/repo_detail_avatar"
+            app:layout_constraintTop_toBottomOf="@+id/repo_detail_name" />
+
+        <TextView
+            android:id="@+id/repo_stargazers_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="2654"
+            style="@style/detailText"
+            app:repoDetailStargazersCount="@{viewModel.selectedProperty.stargazersCount}"
+            app:layout_constraintStart_toStartOf="@+id/repo_detail_avatar"
+            app:layout_constraintTop_toBottomOf="@+id/repo_date" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

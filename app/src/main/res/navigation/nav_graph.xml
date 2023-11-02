@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.codingchallenge.screens.splash.SplashFragment"
+        android:label="Welcome To Repositories" >
+        <action
+            android:id="@+id/action_splashFragment_to_reposFragment"
+            app:destination="@id/reposFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reposFragment"
+        android:name="com.example.codingchallenge.screens.repos.ReposFragment"
+        android:label="Repositories" >
+        <action
+            android:id="@+id/action_reposFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.codingchallenge.screens.detail.DetailFragment">
+        <argument
+            android:name="selectedProperty"
+            app:argType="com.example.codingchallenge.utils.ParcelableRepo" />
+    </fragment>
+</navigation>
